@@ -1,3 +1,7 @@
+# This fork
+
+In this fork the JSON schema for notebook format version 4 is extended to include a literate cell type.
+
 # The Jupyter Notebook Format
 
 [![codecov.io](https://codecov.io/github/jupyter/nbformat/coverage.svg?branch=master)](https://codecov.io/github/jupyter/nbformat?branch=master)

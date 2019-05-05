@@ -230,6 +230,64 @@
                 }
             }
         },
+        
+        "literate_cell": {
+            "description": "Notebook literate cell.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["cell_type", "metadata", "source", "outputs", "execution_count"],
+            "properties": {
+                "cell_type": {
+                    "description": "String identifying the type of cell.",
+                    "enum": ["literate"]
+                },
+                "metadata": {
+                    "description": "Cell-level metadata.",
+                    "type": "object",
+                    "properties": {
+                        "name": {"$ref": "#/definitions/misc/metadata_name"},
+                        "tags": {"$ref": "#/definitions/misc/metadata_tags"},
+                        "jupyter": {
+                          "description": "Official Jupyter Metadata for Literate Cells",
+                          "type": "object",
+                          "additionalProperties": true,
+                            "source_hidden": {
+                                "description": "Whether the source is hidden.",
+                                "type": "boolean"
+                            },
+                           "outputs_hidden": {
+                                "description": "Whether the outputs are hidden.",
+                                "type": "boolean"
+                            },
+                            "collapsed": {
+                                "description": "Whether the cell's output is collapsed/expanded.",
+                                "type": "boolean"
+                            },
+                            "scrolled": {
+                                "description": "Whether the cell's output is scrolled, unscrolled, or autoscrolled.",
+                                "enum": [true, false, "auto"]
+                            },
+                            "name": {"$ref": "#/definitions/misc/metadata_name"},
+                            "tags": {"$ref": "#/definitions/misc/metadata_tags"}
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "source": {"$ref": "#/definitions/misc/source"},
+                "outputs": {
+                    "description": "Execution, display, or stream outputs.",
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/output"}
+                },
+                "execution_count": {
+                    "description": "The code cell's prompt number. Will be null if the cell has not been run.",
+                    "type": ["integer", "null"],
+                    "minimum": 0
+                }
+                "attachments": {"$ref": "#/definitions/misc/attachments"},
+                "source": {"$ref": "#/definitions/misc/source"}
+            }
+        },
 
         "unrecognized_cell": {
             "description": "Unrecognized cell from a future minor-revision to the notebook format.",

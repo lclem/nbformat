@@ -283,7 +283,7 @@
                     "description": "The code cell's prompt number. Will be null if the cell has not been run.",
                     "type": ["integer", "null"],
                     "minimum": 0
-                }
+                },
                 "attachments": {"$ref": "#/definitions/misc/attachments"},
                 "source": {"$ref": "#/definitions/misc/source"}
             }

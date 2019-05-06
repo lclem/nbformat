@@ -236,7 +236,7 @@
             "description": "Notebook literate cell.",
             "type": "object",
             "additionalProperties": false,
-            "required": ["cell_type", "metadata", "source", "source2", "outputs", "execution_count"],
+            "required": ["cell_type", "metadata", "source", "outputs", "execution_count"],
             "properties": {
                 "cell_type": {
                     "description": "String identifying the type of cell.",
@@ -275,7 +275,6 @@
                     "additionalProperties": true
                 },
                 "source": {"$ref": "#/definitions/misc/source"},
-                "source2": {"$ref": "#/definitions/misc/source"},
                 "outputs": {
                     "description": "Execution, display, or stream outputs.",
                     "type": "array",
